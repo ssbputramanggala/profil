@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putra Manggala Soccer School - Sekolah Sepakbola Tulungagung</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #036933;
+            --secondary-green: #036933;
+            --gold: #FFD700;
+            --dark: #212529;
+            --light: #F8F9FA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background-color: var(--primary-green);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0 !important;
+        }
+        
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/dblayf17q/image/upload/v1759045215/MSA001_c85dap.jpg') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--gold);
+            color: var(--dark);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #FFC107;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--gold);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-card {
+            background: white;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-card i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+        
+        .about-card h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Programs Section */
+        .program-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .program-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .program-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-age {
+            background-color: var(--primary-green);
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .program-content h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Achievements Section */
+        .achievement-item {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--gold);
+        }
+        
+        .achievement-item h4 {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+        
+        .achievement-item p {
+            margin-bottom: 0;
+            color: #6c757d;
+        }
+        
+        .achievement-year {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        /* Gallery Section */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(46, 139, 87, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* News Section */
+        .news-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .news-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .news-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-date {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .news-title {
+            font-weight: 600;
+            margin: 10px 0;
+            color: var(--dark);
+        }
+        
+        /* Schedule Section */
+        .schedule-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .schedule-table th {
+            background-color: var(--primary-green);
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .schedule-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .schedule-age {
+            background-color: var(--light);
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        
+        /* Registration Section */
+        .registration {
+            background-color: var(--light);
+        }
+        
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .contact-info h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background-color: var(--light);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 20px;
+            position: relative;
+            flex-grow: 1;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-green);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .testimonial-author h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .testimonial-author p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive Improvements */
+        @media (max-width: 1199px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-brand img {
+                height: 35px;
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            .program-img, .news-img {
+                height: 180px;
+            }
+            
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                height: 80vh;
+                min-height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            
+            .btn-primary-custom {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+            
+            .about-card, .testimonial-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .program-content, .news-body {
+                padding: 20px;
+            }
+            
+            .program-img, .news-img {
+                height: 160px;
+            }
+            
+            .gallery-item img {
+                height: 180px;
+            }
+            
+            .achievement-item {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .contact-info {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 10px 5px;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            footer {
+                padding: 40px 0 15px;
+            }
+            
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero {
+                height: 70vh;
+                min-height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .btn-primary-custom {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-title::after {
+                width: 40px;
+                height: 3px;
+            }
+            
+            .about-card, .testimonial-card {
+                padding: 15px;
+            }
+            
+            .program-content, .news-body {
+                padding: 15px;
+            }
+            
+            .program-img, .news-img {
+                height: 140px;
+            }
+            
+            .gallery-item img {
+                height: 160px;
+            }
+            
+            .achievement-item {
+                padding: 15px;
+            }
+            
+            .contact-info {
+                padding: 15px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 10px;
+            }
+            
+            .contact-info i {
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                margin-right: 8px;
+            }
+            
+            .schedule-table {
+                font-size: 0.8rem;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 8px 3px;
+            }
+            
+            .form-control, .form-select {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .form-label {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1758529518/logo_manggala_presisi_lm6fbo.png" alt="Putra Manggala">
+                Putra Manggala
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Program Latihan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Prestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Berita</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Jadwal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registration">Pendaftaran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>SSB Putra Manggala</h1>
+            <p>Membina Bakat, Mencetak Generasi Emas Sepakbola</p>
+            <a href="#registration" class="btn btn-primary-custom">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Tentang Kami</h2>
+                <p class="section-subtitle">Mengenal lebih dekat Putra Manggala Soccer School</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3>Profil</h3>
+                    <p>Sekolah Sepakbola (SSB) Putra Manggala adalah salah satu Sekolah Sepakbola yang sudah berafiliasi resmi Asosiasi PSSI Provinsi Jawa Timur yang menjadi wadah pembinaan generasi muda di Kabupaten Tulungagung, SSB Putra Manggala hadir untuk fokus pada pengembangan bakat, keterampilan, dan karakter melalui olahraga sepakbola. Berdiri dengan semangat kebersamaan dan profesionalisme, SSB Putra Manggala menjadi salah satu pilihan terbaik bagi anak-anak dan remaja yang ingin menekuni dunia sepakbola sejak dini. </p>
+                    </div>
+                <div class="col-lg-6 mb-4">
+                    <h3>Visi & Misi</h3>
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Visi</h4>
+                        <p>Menjadi sekolah sepakbola terbaik di Tulungagung yang melahirkan pemain berbakat, berprestasi & berkarakter.</p>
+                    </div>
+                    <div class="about-card mt-4">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Misi</h4>
+                        <p>1. Memberikan pelatihan teknik & taktik sepakbola.</p>
+                        <p>2. Membentuk disiplin, sportivitas & mental juara.</p>
+                        <p>3. Mengembangkan potensi pemain untuk berprestasi.</p>
+                        <p>4. Menjalin kerja sama dengan orang tua, sekolah, & komunitas sepakbola</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Program Latihan</h2>
+                <p class="section-subtitle">Program pembinaan sesuai kelompok usia</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759047639/MSA002_ymtghx.jpg" alt="Grassroots" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">Grassroots</span>
+                            <h4>Pembinaan Usia Dini</h4>
+                            <p>Melatih dasar teknik, motorik, dan kecintaan anak pada sepakbola. Latihan 3x seminggu (Senin-Rabu-Jum'at).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759047879/MSA003_gkhgcc.jpg" alt="KU-12" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">KU-12</span>
+                            <h4>Pengembangan Teknik</h4>
+                            <p>Mengembangkan teknik individu, pemahaman posisi, dan mini games. Latihan 3x seminggu (Selasa-Kamis-Minggu Pagi).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048105/MSA004_wclkcd.jpg" alt="KU-13" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">KU-13</span>
+                            <h4>Taktik & Strategi</h4>
+                            <p>Menyiapkan pemain dengan taktik dasar, fisik, dan kompetisi daerah. Latihan 3x seminggu (Selasa-Kamis-Minggu Pagi).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048283/MSA005_nmtwmn.jpg" alt="KU-15" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">KU-15</span>
+                            <h4>Persiapan Kompetisi</h4>
+                            <p>Membentuk taktik tim, fisik remaja, dan mental kompetitif tingkat provinsi. Latihan 3x seminggu (Selasa-Kamis-Minggu Pagi).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048514/MSA006_dykol9.jpg" alt="KU-17" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">KU-17</span>
+                            <h4>Elite Program</h4>
+                            <p>Membina pemain menuju level profesional dengan taktik, uji coba, dan penyaluran klub.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="program-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048714/MSA007_qayqk9.jpg" alt="Pelatih" class="program-img">
+                        <div class="program-content">
+                            <span class="program-age">Tim Pelatih</span>
+                            <h4>Lisensi & Sertifikasi</h4>
+                            <p>Dipimpin oleh pelatih berlisensi AFC (Lisensi C) dan PSSI (Lisensi D).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Prestasi</h2>
+                <p class="section-subtitle">Pencapaian Putra Manggala Soccer School</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="achievement-item">
+                        <span class="achievement-year">2025</span>
+                        <h4>Juara 1 Liga Tulungagung Junior U10</h4>
+                        <p>Kompetisi liga anak usia 10 tahun yg diikuti oleh beberapa klub di Kabupaten Tulungagung dan Trenggalek.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-year">2024</span>
+                        <h4>Juara 2 PSSI Tulungagung U-11</h4>
+                        <p>Menjadi Runner Up Kompetisi Sepakbola U11 PSSI Tulungagung Tahun 2024.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-year">2024</span>
+                        <h4>Elite Pro Academy Borneo U-18</h4>
+                        <p>Pemain a/n Raihan Al Arsyad tergabung menjadi bagian Tim Borneo U-18 yg sebelumnya The Best Player Talent Scout Persebaya Future Lab </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="achievement-item">
+                        <span class="achievement-year">2024</span>
+                        <h4>Juara 3 Liga Top Score Jatim</h4>
+                        <p>Meraih gelar juara 3 kategori U16 dan kompetisi Liga Top Skore Jawa Timur Tahun 2024</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-year">2023</span>
+                        <h4>Juara 1 PSSI Tulungagung U13</h4>
+                        <p>Juara 1 dan mewakili Kabupaten Tulungagung sampai 6 Besar Piala Soeratin U13 PSSI Jawa Timur Tahun 2023</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="achievement-year">2021</span>
+                        <h4>Juara 1 PSSI Tulungagung U11 dan U13</h4>
+                        <p>Double Winner Kompetisi Internal PSSI Tulungagung pada tahun 2021 ( KU 11 dan KU 13) .</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <h3>Galeri Prestasi</h3>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048514/MSA006_dykol9.jpg" alt="Trophy">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759048283/MSA005_nmtwmn.jpg" alt="Team">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759049631/MSA008_ycgzun.jpg" alt="Match">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonial" class="testimonial">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Testimoni</h2>
+                <p class="section-subtitle">Apa kata orang tua dan pemain tentang Putra Manggala</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">Anak saya sangat berkembang setelah bergabung dengan Putra Manggala. Tidak hanya skill sepakbola yang meningkat, tetapi juga karakter dan disiplinnya. Terima kasih Putra Manggala!</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Orang Tua">
+                            <div>
+                                <h5>Ibu Siti</h5>
+                                <p>Orang Tua Pemain U-13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">Pelatih di Putra Manggala sangat profesional dan sabar. Mereka mengajarkan teknik sepakbola dengan metode yang menyenangkan dan efektif.</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pemain">
+                            <div>
+                                <h5>Rizki</h5>
+                                <p>Pemain U-15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">Fasilitas latihan yang memadai dan program yang terstruktur membuat anak saya betah dan termotivasi untuk terus berkembang.</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Orang Tua">
+                            <div>
+                                <h5>Bapak Ahmad</h5>
+                                <p>Orang Tua Pemain U-11</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Berita & Artikel</h2>
+                <p class="section-subtitle">Update terbaru seputar Putra Manggala</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card news-card">
+                        <img src="https://res.cloudinary.com/dblayf17q/image/upload/v1759049631/MSA008_ycgzun.jpg" alt="Juara TJL" class="card-img-top news-img">
+                        <div class="card-body news-body">
+                            <p class="news-date">15 Juni 2025</p>
+                            <h5 class="news-title">Putra Manggala Raih Juara 1 Tulungagung Junior League Tahun 2025</h5>
+                            <p class="card-text">Tulungagung, Juni 2025 – SSB Putra Manggala berhasil menorehkan prestasi gemilang pada ajang Tulungagung Junior League (TJL) Season 2 yang berlangsung sejak Februari hingga Juni 2025. Dalam kompetisi yang diikuti 12 tim kategori U-10 dan 16 tim kategori U-11 ini, Putra Manggala tampil konsisten dan berhasil keluar sebagai Juara 1 Kategori U-10..</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card news-card">
+                        <img src="https://ssbputramanggala.wordpress.com/wp-content/uploads/2024/03/img20240308095300.jpg?w=2048" alt="Nutrisi" class="card-img-top news-img">
+                        <div class="card-body news-body">
+                            <p class="news-date">08 Maret 2024</p>
+                            <h5 class="news-title">Pelatihan Statistik dan Media PSSI Jawa Timur</h5>
+                            <p class="card-text">Alhamdulillah dalam kegiatan ToT (Training of Trainer) Pelatihan Statistik Sepakbola dan Pelatihan Media Officer Klub. yang diselenggaran oleh Lembaga Pembinaan Olahraga (LPO) PP Muhammadiyah yang bekerja sama dengan PSSI Jawa Timur, Sekolah Sepakbola Putra Manggala berkesempatan menjadi salah satu peserta.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card news-card">
+                        <img src="https://ssbputramanggala.wordpress.com/wp-content/uploads/2024/03/msa-jember-day-1--1.jpg?w=2048" alt="Turnamen" class="card-img-top news-img">
+                        <div class="card-body news-body">
+                            <p class="news-date">02 Februari 2024</p>
+                            <h5 class="news-title">Putra Manggala terhenti di 6 Besar</h5>
+                            <p class="card-text">Dalam Kompetisi Piala Soeratin PSSI Jawa Timur U13 Tahun 2023./2024. Putra Manggala Soccer School harus terhenti di Babak 6 Besar. Adapun untuk rekap pertandingan sebagaimana berikut </p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary-custom">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Jadwal Latihan</h2>
+                <p class="section-subtitle">Jadwal lengkap latihan semua kelompok umur</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="schedule-table">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Kelompok Umur</th>
+                                    <th>Hari</th>
+                                    <th>Waktu</th>
+                                    <th>Lokasi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="schedule-age">Grassroots</span></td>
+                                    <td>Senin - Rabu - Jum'at</td>
+                                    <td>15:00 - 17:00</td>
+                                    <td>Lap.Kridatama Besuki</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="schedule-age">KU-12</span></td>
+                                    <td>Selasa, Kamis, Sabtu</td>
+                                    <td>15:00 - 17:00</td>
+                                    <td>Lap.Kridatama Besuki</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="schedule-age">KU-13</span></td>
+                                    <td>Selasa, Kamis, Sabtu</td>
+                                    <td>15:00 - 17:00</td>
+                                    <td>Lap.Kridatama Besuki</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="schedule-age">KU-15</span></td>
+                                    <td>Selasa, Kamis, Sabtu</td>
+                                    <td>15:00 - 17:00</td>
+                                    <td>Lap.Kridatama Besuki</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="schedule-age">KU-17</span></td>
+                                    <td>Selasa, Kamis, Sabtu</td>
+                                    <td>15:00 - 17:00</td>
+                                    <td>Lap.Kridatama Besuki</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Informasi:</strong> Jadwal dapat berubah sewaktu-waktu. Untuk informasi terkini, silakan hubungi admin Putra Manggala.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Pendaftaran</h2>
+                <p class="section-subtitle">Daftarkan putra/putri Anda di Putra Manggala sekarang juga!</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <form id="registrationForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fullName" class="form-label">Nama Lengkap Pemain</label>
+                                        <input type="text" class="form-control" id="fullName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="age" class="form-label">Usia</label>
+                                        <input type="number" class="form-control" id="age" min="6" max="17" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="parentName" class="form-label">Nama Orang Tua/Wali</label>
+                                        <input type="text" class="form-control" id="parentName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Nomor WhatsApp Orang Tua</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Alamat Lengkap</label>
+                                    <textarea class="form-control" id="address" rows="2" required></textarea>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="group" class="form-label">Kelompok Umur</label>
+                                        <select class="form-select" id="group" required>
+                                            <option value="">Pilih Kelompok Umur</option>
+                                            <option value="Grassroots">Grassroots (Usia 6-11 tahun)</option>
+                                            <option value="KU-11">KU-12 (Usia 10-11 tahun)</option>
+                                            <option value="KU-13">KU-13 (Usia 12-13 tahun)</option>
+                                            <option value="KU-15">KU-15 (Usia 14-15 tahun)</option>
+                                            <option value="KU-17">KU-17 (Usia 16-17 tahun)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="experience" class="form-label">Pengalaman Bermain</label>
+                                        <select class="form-select" id="experience" required>
+                                            <option value="">Pilih Pengalaman</option>
+                                            <option value="pemula">Pemula (Belum pernah latihan formal)</option>
+                                            <option value="sedang">Sedang (Pernah latihan 1-2 tahun)</option>
+                                            <option value="lanjutan">Lanjutan (Pernah latihan >2 tahun)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Pesan (Opsional)</label>
+                                    <textarea class="form-control" id="message" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Info Biaya:</strong> Biaya pendaftaran Rp 100.000 dan iuran bulanan Rp 80.000 (belum termasuk seragam dan perlengkapan).
+                                </div>
+                                
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary-custom">Kirim Pendaftaran</button>
+                                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Putra Manggala,%20saya%20ingin%20bertanya%20tentang%20pendaftaran" 
+                                       class="btn btn-success" target="_blank">
+                                        <i class="fab fa-whatsapp me-2"></i> Hubungi Admin via WhatsApp
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Kontak Kami</h2>
+                <p class="section-subtitle">Hubungi kami untuk informasi lebih lanjut</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <div class="contact-info">
+                        <h4>Informasi Kontak</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Niyama Depan Balai Desa Besuki Kec. Besuki Tulungagung 66275</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>082138996112</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>082138996112</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ssbputramanggala@gmail.com</span>
+                        </div>
+                        
+                        <h4 class="mt-4">Ikuti Kami</h4>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Kirim Pesan</h4>
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactName" class="form-label">Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="contactName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subjek</label>
+                                    <input type="text" class="form-control" id="contactSubject" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Pesan</label>
+                                    <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary-custom">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+			  <div class="col-12">
+				<h4 class="text-center mb-4">Lokasi Kami</h4>
+				<div class="ratio ratio-16x9">
+				  <iframe 
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.397677424728!2d111.903896414768!3d-8.066699994163547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78e1b4f3a3d5b5%3A0x6d6e6d6e6d6e6d6e!2sPutra%20Manggala%20Soccer%20School%20Tulungagung!5e0!3m2!1sid!2sid!4v1727512345678!5m2!1sid!2sid" 
+					style="border:0;" 
+					allowfullscreen="" 
+					loading="lazy" 
+					referrerpolicy="no-referrer-when-downgrade">
+				  </iframe>
+				</div>
+				<div class="text-center mt-3">
+				  <a href="https://maps.app.goo.gl/PEnhrPLQGz5BNdU67" target="_blank" class="btn btn-success">
+					Buka di Google Maps
+				  </a>
+				</div>
+			  </div>
+			</div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Putra Manggala</div>
+                    <p>Putra Manggala Soccer School - Sekolah Sepakbola Terbaik di Tulungagung. Membina Bakat, Mencetak Generasi Emas Sepakbola Indonesia.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="#home">Beranda</a>
+                        <a href="#about">Tentang Kami</a>
+                        <a href="#programs">Program Latihan</a>
+                        <a href="#achievements">Prestasi</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Informasi</h5>
+                    <div class="footer-links">
+                        <a href="#news">Berita</a>
+                        <a href="#schedule">Jadwal Latihan</a>
+                        <a href="#registration">Pendaftaran</a>
+                        <a href="#contact">Kontak</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Dapatkan update terbaru seputar Putra Manggala dan tips sepakbola langsung di email Anda.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Anda">
+                            <button class="btn btn-warning" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Putra Manggala Soccer School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Putra Manggala,%20saya%20ingin%20bertanya%20tentang%20sekolah%20sepakbola" 
+       class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+            alertDiv.innerHTML = `
+                <strong>Terima kasih!</strong> Pendaftaran Anda telah diterima. Kami akan menghubungi Anda segera.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            this.appendChild(alertDiv);
+            this.reset();
+            
+            // Auto dismiss after 5 seconds
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+            alertDiv.innerHTML = `
+                <strong>Pesan terkirim!</strong> Terima kasih telah menghubungi kami. Kami akan membalas segera.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            this.appendChild(alertDiv);
+            this.reset();
+            
+            // Auto dismiss after 5 seconds
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(46, 139, 87, 0.95)';
+                navbar.style.padding = '5px 0';
+            } else {
+                navbar.style.backgroundColor = 'var(--primary-green)';
+                navbar.style.padding = '10px 0';
+            }
+        });
+    </script>
+</body>
+</html>
